@@ -1,5 +1,4 @@
 package edu.temple.inclassuiacvitivity
-
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -10,7 +9,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         val spinner = findViewById<Spinner>(R.id.spinner)
         val displayTextView = findViewById<TextView>(R.id.textDisplay)
 
@@ -19,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         with(spinner) {
             // Step 2: Create adapter to display items from array in Spinner using TextSizeAdapter
-            adapter = TextSizeAdapter(numberArray)
+            adapter = TextSizeAdapter(this@MainActivity, numberArray)
 
             // Step 3: Change TextView's text size to the number selected in the Spinner
             onItemSelectedListener = object : OnItemSelectedListener {
